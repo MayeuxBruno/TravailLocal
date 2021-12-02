@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\59011-07-08\\Desktop\\GestionStock\\GestionStock.csproj": {}
+    "C:\\Users\\59011-07-08\\Documents\\TravailLocal\\GestionStock\\GestionStock.csproj": {}
   },
   "projects": {
-    "C:\\Users\\59011-07-08\\Desktop\\GestionStock\\GestionStock.csproj": {
+    "C:\\Users\\59011-07-08\\Documents\\TravailLocal\\GestionStock\\GestionStock.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\59011-07-08\\Desktop\\GestionStock\\GestionStock.csproj",
+        "projectUniqueName": "C:\\Users\\59011-07-08\\Documents\\TravailLocal\\GestionStock\\GestionStock.csproj",
         "projectName": "GestionStock",
-        "projectPath": "C:\\Users\\59011-07-08\\Desktop\\GestionStock\\GestionStock.csproj",
+        "projectPath": "C:\\Users\\59011-07-08\\Documents\\TravailLocal\\GestionStock\\GestionStock.csproj",
         "packagesPath": "C:\\Users\\59011-07-08\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\59011-07-08\\Desktop\\GestionStock\\obj\\",
+        "outputPath": "C:\\Users\\59011-07-08\\Documents\\TravailLocal\\GestionStock\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

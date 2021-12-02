@@ -29,10 +29,10 @@ namespace GestionStock.Controller
             _mapper = config.CreateMapper();
         }
 
-        public IEnumerable<ArticleDTOOut>GetAllArticles()
+        public IEnumerable<Article>GetAllArticles()
         {
             IEnumerable<Article> listeArticles = _service.GetAllArticles();
-            return _mapper.Map<IEnumerable<ArticleDTOOut>>(listeArticles);
+            return _mapper.Map<IEnumerable<Article>>(listeArticles);
         }
 
         public ActionResult<Article> GetCourseById(int id)

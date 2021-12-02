@@ -27,7 +27,7 @@ namespace GestionStock.Data.Dtos
             public string LibelleArticle { get; set; }
             public int? QuantiteStockee { get; set; }
 
-            //public virtual CategorieDTOOut Categ { get; set; }
+            public virtual CategorieDTOOut Categ { get; set; }
         }
     }
 }

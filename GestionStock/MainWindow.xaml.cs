@@ -2,6 +2,7 @@
 using GestionStock.Controller;
 using GestionStock.Data;
 using GestionStock.Data.Services;
+using GestionStock.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,11 +29,25 @@ namespace GestionStock
         public MainWindow()
         {
             InitializeComponent();
-            var context = new MyDbContext();
+            //var context = new MyDbContext();
             //var service = new ArticleServices(context);
             //dgListe.ItemsSource = service.GetAllArticles();
-            var controller = new ArticleController(context);
-            dgListe.ItemsSource = controller.GetAllArticles();
+            //var controller = new ArticleController(context);
+            //dgListe.ItemsSource = controller.GetAllArticles();
+        }
+
+        private void BtnGestionArticle_Click(object sender,RoutedEventArgs e)
+        {
+            string param = "Gestion Articles";
+            this.Opacity = 0.5;
+            GestionArticles win = new GestionArticles(param, this);
+            win.ShowDialog();
+            this.Opacity = 1;
+        }
+
+        private void Btn(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

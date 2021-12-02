@@ -20,12 +20,7 @@ namespace GestionStock.Data.Dtos
 
         public partial class CategorieDTOOut
         {
-            public CategorieDTOOut()
-            {
-                    Articles = new HashSet<ArticleDTOOut>();
-            }
             public string LibelleCategorie { get; set; }
-            public virtual ICollection<ArticleDTOOut> Articles { get; set; }
         }
     }
 }

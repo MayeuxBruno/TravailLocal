@@ -28,10 +28,10 @@ namespace GestionStock.Controller
             _mapper = config.CreateMapper();
         }
 
-        public ActionResult<IEnumerable<CategorieDTOOut>> GetAllArticles()
+        public IEnumerable<CategorieDTOOut> GetAllCategories()
         {
             IEnumerable<Categorie> listeCategories = _service.GetAllCategories();
-            return Ok(_mapper.Map<IEnumerable<CategorieDTOOut>>(listeCategories));
+            return _mapper.Map<IEnumerable<CategorieDTOOut>>(listeCategories);
         }
 
         public ActionResult<Categorie> GetCategorieById(int id)

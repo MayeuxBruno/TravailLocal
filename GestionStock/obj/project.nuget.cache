@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vl+QpMCg+9D/pByJXl4/CecOerXH+uwUbXeiKdKeEqMpP8zwuMISIMffWV52TI4FfBb1y5HGYCf9JEtfoCCHIA==",
+  "dgSpecHash": "qMNEsYs6QT3KJ6i33VlaEDB+OdV8rEga3hdShLACUOIYH8pUiVH9fGz7DVZQpaDdfMj4xHGqw/zTnJW0qfOfJg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\59011-07-08\\Desktop\\GestionStock\\GestionStock.csproj",
+  "projectFilePath": "C:\\Users\\59011-07-08\\Documents\\TravailLocal\\GestionStock\\GestionStock.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\59011-07-08\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\59011-07-08\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
