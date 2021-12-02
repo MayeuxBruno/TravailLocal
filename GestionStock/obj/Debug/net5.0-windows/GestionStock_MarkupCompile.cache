@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\59011-07-08\Documents\TravailLocal\GestionStock\obj\Debug\net5.0-windows\
+D:\Exercices\TravailLocal\GestionStock\obj\Debug\net5.0-windows\
 GestionStock
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-C:\Users\59011-07-08\Documents\TravailLocal\GestionStock\App.xaml
+D:\Exercices\TravailLocal\GestionStock\App.xaml
 3-794833475
 
 22-267255685
-2401390910620
+240558970059
 MainWindow.xaml;Windows\FormAjoutProduit.xaml;Windows\GestionArticles.xaml;
 
 False

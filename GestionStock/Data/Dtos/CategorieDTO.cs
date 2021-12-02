@@ -20,6 +20,8 @@ namespace GestionStock.Data.Dtos
 
         public partial class CategorieDTOOut
         {
+            public int IdCategorie { get; set; }
+
             public string LibelleCategorie { get; set; }
         }
     }

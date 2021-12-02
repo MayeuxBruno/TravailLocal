@@ -31,7 +31,12 @@ namespace GestionStock.Windows
             InitializeComponent();
             _context = new MyDbContext();
             _controller = new CategorieController(_context);
-            categorie.ItemsSource= _controller.GetAllCategories();
+            var liste = _controller.GetAllCategories();
+
+            foreach (var item in liste)
+            {
+                categorie.Items.Add(new { Text = item.LibelleCategorie, Value = item.IdCategorie });
+            }
         }
         private void InitCombobox()
         {
