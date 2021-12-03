@@ -28,11 +28,21 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Label Content="Gestion des Produits" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" HorizontalContentAlignment="Center" FontSize="20" FontWeight="Bold" FontStyle="Italic"/>
-        <DataGrid x:Name="dgListeArticle" Grid.Row="3" Grid.Column="1" Grid.RowSpan="6" AutoGenerateColumns="False">
+        <DataGrid x:Name="dgListeArticle" 
+                  Grid.Row="3" Grid.Column="1" 
+                  Grid.RowSpan="6" 
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Libelle de l'article" Binding="{Binding LibelleArticle}" Width="10*"/>
-                <DataGridTextColumn Header="Quantité"  Binding="{Binding QuantiteStockee}" Width="2*"/>
-                    <DataGridTextColumn Header="Catégorie"  Binding="{Binding Categ.LibelleCategorie}" Width="5*"/>
+                <DataGridTextColumn Header="Libelle de l'article" 
+                                    Binding="{Binding LibelleArticle}" 
+                                    Width="10*"/>
+                <DataGridTextColumn Header="Quantité"  
+                                    Binding="{Binding QuantiteStockee}" 
+                                    Width="2*"/>
+                <DataGridTextColumn Header="Catégorie"  
+                                    Binding="{Binding Categ.LibelleCategorie}" 
+                                    Width="5*"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="btnAjout" Content="Ajouter"  Grid.Row="3" Grid.Column="3" Click="BtnAjout_Click"/>

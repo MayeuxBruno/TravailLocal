@@ -2,6 +2,7 @@
 using GestionStock.Data;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,12 +32,16 @@ namespace GestionStock.Windows
             InitializeComponent();
             _context = new MyDbContext();
             _controller = new CategorieController(_context);
-            var liste = _controller.GetAllCategories();
+            //var liste = _controller.GetAllCategories();
 
-            foreach (var item in liste)
+           /* foreach (var item in liste)
             {
-                categorie.Items.Add(new { Text = item.LibelleCategorie, Value = item.IdCategorie });
-            }
+                categorie.Items.Add(Tag=item.LibelleCategorie);
+            }*/
+            categorie.ItemsSource= _controller.GetAllCategories();
+            categorie.DisplayMemberPath = "LibelleCategorie";
+            categorie.SelectedValuePath = "IdCategorie";
+
         }
         private void InitCombobox()
         {
@@ -46,6 +51,13 @@ namespace GestionStock.Windows
         private void BtnRetour_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void categorie_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBox cmb = (ComboBox)sender;
+            Trace.WriteLine(cmb.SelectedValue);
+            Trace.WriteLine(cmb.SelectedValuePath);
         }
     }
 

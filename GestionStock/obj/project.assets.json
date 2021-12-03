@@ -4540,23 +4540,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nonom\\.nuget\\packages\\": {},
+    "C:\\Users\\59011-07-08\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Exercices\\TravailLocal\\GestionStock\\GestionStock.csproj",
+      "projectUniqueName": "C:\\Users\\59011-07-08\\Documents\\TravailLocal\\GestionStock\\GestionStock.csproj",
       "projectName": "GestionStock",
-      "projectPath": "D:\\Exercices\\TravailLocal\\GestionStock\\GestionStock.csproj",
-      "packagesPath": "C:\\Users\\nonom\\.nuget\\packages\\",
-      "outputPath": "D:\\Exercices\\TravailLocal\\GestionStock\\obj\\",
+      "projectPath": "C:\\Users\\59011-07-08\\Documents\\TravailLocal\\GestionStock\\GestionStock.csproj",
+      "packagesPath": "C:\\Users\\59011-07-08\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\59011-07-08\\Documents\\TravailLocal\\GestionStock\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\nonom\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\59011-07-08\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
