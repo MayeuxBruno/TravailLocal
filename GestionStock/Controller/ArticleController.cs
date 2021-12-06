@@ -44,7 +44,7 @@ namespace GestionStock.Controller
             }
             return NotFound();
         }
-        public ActionResult<Article> CreateArticle(Article obj)
+        public ActionResult<Article> CreateArticle(ArticleDTOIn obj)
         {
             Article newCourse = _mapper.Map<Article>(obj);
             _service.AddArticle(newCourse);

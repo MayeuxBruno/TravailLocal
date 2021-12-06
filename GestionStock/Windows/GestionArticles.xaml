@@ -32,14 +32,21 @@
                   Grid.Row="3" Grid.Column="1" 
                   Grid.RowSpan="6" 
                   AutoGenerateColumns="False"
-                  IsReadOnly="True">
+                  IsReadOnly="True" 
+                  SelectionChanged="dgListeArticle_SelectionChanged">
             <DataGrid.Columns>
+                <DataGridTextColumn Header="IdArticle"
+                                    Binding="{Binding IdArticle}"
+                                    Visibility="Hidden"/>
                 <DataGridTextColumn Header="Libelle de l'article" 
                                     Binding="{Binding LibelleArticle}" 
                                     Width="10*"/>
                 <DataGridTextColumn Header="Quantité"  
                                     Binding="{Binding QuantiteStockee}" 
                                     Width="2*"/>
+                <DataGridTextColumn Header="IdCategorie"
+                                    Binding="{Binding IdCategorie}"
+                                    Visibility="Hidden"/>
                 <DataGridTextColumn Header="Catégorie"  
                                     Binding="{Binding Categ.LibelleCategorie}" 
                                     Width="5*"/>

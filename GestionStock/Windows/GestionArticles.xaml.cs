@@ -22,17 +22,23 @@ namespace GestionStock.Windows
     public partial class GestionArticles : Window
     {
         MainWindow Fenetre;
+        private readonly ArticleController _controller;
+        private readonly MyDbContext _context;
         public string Param { get; set; }
         public GestionArticles(string param, MainWindow fenetre)
         {
             this.Param = param;
             this.Fenetre = fenetre;
             InitializeComponent();
-            var context = new MyDbContext();
-            var controller = new ArticleController(context);
-            dgListeArticle.ItemsSource = controller.GetAllArticles();
+            _context = new MyDbContext();
+            _controller = new ArticleController(_context);
+            LoadDataGrid();
         }
 
+        private void LoadDataGrid()
+        {
+            dgListeArticle.ItemsSource = _controller.GetAllArticles();
+        }
         private void BtnAnnule_Click(object sender,RoutedEventArgs e)
         {
             this.Close();
@@ -45,7 +51,17 @@ namespace GestionStock.Windows
             FormAjoutProduit win = new FormAjoutProduit(param);
             win.ShowDialog();
             this.Opacity = 1;
+            LoadDataGrid();
+        }
 
+     
+
+      
+
+        private void dgListeArticle_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DataGrid dg = sender as DataGrid;
+           
         }
     }
 }
