@@ -5,16 +5,16 @@ using System.Collections.Generic;
 
 namespace VillageGreen.Data.Models
 {
-    public partial class Tva
+    public partial class TVA
     {
-        public Tva()
+        public TVA()
         {
-            Historiquetvas = new HashSet<Historiquetva>();
+            HistoriqueTVA = new HashSet<HistoriqueTVA>();
         }
 
         public int IdTva { get; set; }
         public int? TauxTva { get; set; }
 
-        public virtual ICollection<Historiquetva> Historiquetvas { get; set; }
+        public virtual ICollection<HistoriqueTVA> HistoriqueTVA { get; set; }
     }
 }

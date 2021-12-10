@@ -10,8 +10,8 @@ namespace VillageGreen.Data.Models
         public Produit()
         {
             Approvisionnements = new HashSet<Approvisionnement>();
-            Historiquetvas = new HashSet<Historiquetva>();
-            Lignescommandes = new HashSet<Lignescommande>();
+            HistoriqueTVA = new HashSet<HistoriqueTVA>();
+            LignesCommande = new HashSet<LigneCommande>();
         }
 
         public int IdProduit { get; set; }
@@ -23,9 +23,9 @@ namespace VillageGreen.Data.Models
         public int Stock { get; set; }
         public int IdRubrique { get; set; }
 
-        public virtual Rubrique IdRubriqueNavigation { get; set; }
+        public virtual Rubrique Rubrique { get; set; }
         public virtual ICollection<Approvisionnement> Approvisionnements { get; set; }
-        public virtual ICollection<Historiquetva> Historiquetvas { get; set; }
-        public virtual ICollection<Lignescommande> Lignescommandes { get; set; }
+        public virtual ICollection<HistoriqueTVA> HistoriqueTVA { get; set; }
+        public virtual ICollection<LigneCommande> LignesCommande { get; set; }
     }
 }

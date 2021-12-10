@@ -13,7 +13,7 @@ namespace VillageGreen.Data.Models
         public DateTime? DateLivraison { get; set; }
         public int? QuantiteLivraison { get; set; }
 
-        public virtual Adress IdAdresseNavigation { get; set; }
-        public virtual Commande IdCommandeNavigation { get; set; }
+        public virtual Adresse Adresse { get; set; }
+        public virtual Commande Commande { get; set; }
     }
 }

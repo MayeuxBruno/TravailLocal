@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 namespace VillageGreen.Data.Models
 {
-    public partial class Pay
+    public partial class Pays
     {
-        public Pay()
+        public Pays()
         {
             Villes = new HashSet<Ville>();
         }

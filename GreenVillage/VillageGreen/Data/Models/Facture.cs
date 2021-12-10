@@ -13,7 +13,7 @@ namespace VillageGreen.Data.Models
         public DateTime DatePaiement { get; set; }
         public decimal MontantPaiement { get; set; }
 
-        public virtual Commande IdCommandeNavigation { get; set; }
+        public virtual Commande Commande { get; set; }
         public virtual Reglement IdReglementNavigation { get; set; }
     }
 }

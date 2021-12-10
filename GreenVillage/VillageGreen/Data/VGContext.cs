@@ -18,24 +18,24 @@ namespace VillageGreen.Data
         {
         }
 
-        public virtual DbSet<Adress> Adresses { get; set; }
+        public virtual DbSet<Adresse> Adresses { get; set; }
         public virtual DbSet<Approvisionnement> Approvisionnements { get; set; }
-        public virtual DbSet<Categoriesclient> Categoriesclients { get; set; }
+        public virtual DbSet<CategorieClient> CategoriesClient { get; set; }
         public virtual DbSet<Client> Clients { get; set; }
         public virtual DbSet<Commande> Commandes { get; set; }
-        public virtual DbSet<Etatscommande> Etatscommandes { get; set; }
+        public virtual DbSet<EtatCommande> EtatsCommande { get; set; }
         public virtual DbSet<Facture> Factures { get; set; }
         public virtual DbSet<Fournisseur> Fournisseurs { get; set; }
-        public virtual DbSet<Historiquetva> Historiquetvas { get; set; }
-        public virtual DbSet<Lignescommande> Lignescommandes { get; set; }
+        public virtual DbSet<HistoriqueTVA> HistoriqueTVA { get; set; }
+        public virtual DbSet<LigneCommande> LignesCommande { get; set; }
         public virtual DbSet<Livraison> Livraisons { get; set; }
-        public virtual DbSet<Pay> Pays { get; set; }
+        public virtual DbSet<Pays> Pays { get; set; }
         public virtual DbSet<Produit> Produits { get; set; }
-        public virtual DbSet<Progressionscommande> Progressionscommandes { get; set; }
+        public virtual DbSet<ProgressionCommande> ProgressionsCommande { get; set; }
         public virtual DbSet<Reglement> Reglements { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Rubrique> Rubriques { get; set; }
-        public virtual DbSet<Tva> Tvas { get; set; }
+        public virtual DbSet<TVA> TVA { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Ville> Villes { get; set; }
 
@@ -43,14 +43,13 @@ namespace VillageGreen.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseMySQL("server=localhost;user=root;database=filrougebdd;ssl mode=none");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Adress>(entity =>
+            modelBuilder.Entity<Adresse>(entity =>
             {
                 entity.HasKey(e => e.IdAdresse)
                     .HasName("PRIMARY");
@@ -61,10 +60,10 @@ namespace VillageGreen.Data
 
                 entity.Property(e => e.IdAdresse).HasColumnType("int(11)");
 
-                entity.Property(e => e.Adresse)
+                entity.Property(e => e.AdressePostale)
                     .IsRequired()
                     .HasMaxLength(50)
-                    .HasColumnName("adresse");
+                    .HasColumnName("adressePostale");
 
                 entity.Property(e => e.ComplementAdresse)
                     .HasMaxLength(50)
@@ -90,7 +89,7 @@ namespace VillageGreen.Data
                     .HasMaxLength(12)
                     .HasColumnName("telMobile");
 
-                entity.HasOne(d => d.IdVilleNavigation)
+                entity.HasOne(d => d.Ville)
                     .WithMany(p => p.Adresses)
                     .HasForeignKey(d => d.IdVille)
                     .OnDelete(DeleteBehavior.ClientSetNull)
@@ -119,18 +118,18 @@ namespace VillageGreen.Data
                     .HasMaxLength(5)
                     .HasColumnName("refFournisseur");
 
-                entity.HasOne(d => d.IdFournisseurNavigation)
+                entity.HasOne(d => d.Fournisseur)
                     .WithMany(p => p.Approvisionnements)
                     .HasForeignKey(d => d.IdFournisseur)
                     .HasConstraintName("FK_Approvisionnements_Fournisseurs");
 
-                entity.HasOne(d => d.IdProduitNavigation)
+                entity.HasOne(d => d.Produit)
                     .WithMany(p => p.Approvisionnements)
                     .HasForeignKey(d => d.IdProduit)
                     .HasConstraintName("FK_Approvisionnements_Produits");
             });
 
-            modelBuilder.Entity<Categoriesclient>(entity =>
+            modelBuilder.Entity<CategorieClient>(entity =>
             {
                 entity.HasKey(e => e.IdCategorieClient)
                     .HasName("PRIMARY");
@@ -179,7 +178,7 @@ namespace VillageGreen.Data
                     .HasMaxLength(5)
                     .HasColumnName("refClient");
 
-                entity.HasOne(d => d.IdCategorieClientNavigation)
+                entity.HasOne(d => d.CategorieClient)
                     .WithMany(p => p.Clients)
                     .HasForeignKey(d => d.IdCategorieClient)
                     .OnDelete(DeleteBehavior.ClientSetNull)
@@ -212,20 +211,20 @@ namespace VillageGreen.Data
 
                 entity.Property(e => e.NumeroCommande).HasMaxLength(10);
 
-                entity.HasOne(d => d.IdAdresseNavigation)
+                entity.HasOne(d => d.Adresse)
                     .WithMany(p => p.Commandes)
                     .HasForeignKey(d => d.IdAdresse)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Commandes_Adresses");
 
-                entity.HasOne(d => d.IdUserNavigation)
+                entity.HasOne(d => d.Client)
                     .WithMany(p => p.Commandes)
                     .HasForeignKey(d => d.IdUser)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Commandes_Clients");
             });
 
-            modelBuilder.Entity<Etatscommande>(entity =>
+            modelBuilder.Entity<EtatCommande>(entity =>
             {
                 entity.HasKey(e => e.IdEtatCommande)
                     .HasName("PRIMARY");
@@ -265,7 +264,7 @@ namespace VillageGreen.Data
                     .HasColumnType("decimal(19,4)")
                     .HasColumnName("montantPaiement");
 
-                entity.HasOne(d => d.IdCommandeNavigation)
+                entity.HasOne(d => d.Commande)
                     .WithMany(p => p.Factures)
                     .HasForeignKey(d => d.IdCommande)
                     .HasConstraintName("FK_Factures_Commandes");
@@ -291,7 +290,7 @@ namespace VillageGreen.Data
                     .HasColumnName("nomFournisseur");
             });
 
-            modelBuilder.Entity<Historiquetva>(entity =>
+            modelBuilder.Entity<HistoriqueTVA>(entity =>
             {
                 entity.HasKey(e => e.IdHistoriqueTva)
                     .HasName("PRIMARY");
@@ -316,18 +315,18 @@ namespace VillageGreen.Data
                     .HasColumnType("int(11)")
                     .HasColumnName("IdTVA");
 
-                entity.HasOne(d => d.IdProduitNavigation)
-                    .WithMany(p => p.Historiquetvas)
+                entity.HasOne(d => d.Produit)
+                    .WithMany(p => p.HistoriqueTVA)
                     .HasForeignKey(d => d.IdProduit)
                     .HasConstraintName("FK_HistoriqueTVA_Produits");
 
-                entity.HasOne(d => d.IdTvaNavigation)
-                    .WithMany(p => p.Historiquetvas)
+                entity.HasOne(d => d.TVA)
+                    .WithMany(p => p.HistoriqueTVA)
                     .HasForeignKey(d => d.IdTva)
                     .HasConstraintName("FK_HistoriqueTVA_TVA");
             });
 
-            modelBuilder.Entity<Lignescommande>(entity =>
+            modelBuilder.Entity<LigneCommande>(entity =>
             {
                 entity.HasKey(e => e.IdLigneCommande)
                     .HasName("PRIMARY");
@@ -348,13 +347,13 @@ namespace VillageGreen.Data
                     .HasColumnType("int(11)")
                     .HasColumnName("quantiteProduit");
 
-                entity.HasOne(d => d.IdCommandeNavigation)
-                    .WithMany(p => p.Lignescommandes)
+                entity.HasOne(d => d.Commande)
+                    .WithMany(p => p.LignesCommande)
                     .HasForeignKey(d => d.IdCommande)
                     .HasConstraintName("FK_LignesCommande_Commandes");
 
-                entity.HasOne(d => d.IdProduitNavigation)
-                    .WithMany(p => p.Lignescommandes)
+                entity.HasOne(d => d.Produit)
+                    .WithMany(p => p.LignesCommande)
                     .HasForeignKey(d => d.IdProduit)
                     .HasConstraintName("FK_LigneCommande_Produits");
             });
@@ -384,18 +383,18 @@ namespace VillageGreen.Data
                     .HasColumnType("int(11)")
                     .HasColumnName("quantiteLivraison");
 
-                entity.HasOne(d => d.IdAdresseNavigation)
+                entity.HasOne(d => d.Adresse)
                     .WithMany(p => p.Livraisons)
                     .HasForeignKey(d => d.IdAdresse)
                     .HasConstraintName("FK_Livraisons_Adresses");
 
-                entity.HasOne(d => d.IdCommandeNavigation)
+                entity.HasOne(d => d.Commande)
                     .WithMany(p => p.Livraisons)
                     .HasForeignKey(d => d.IdCommande)
                     .HasConstraintName("FK_Livraisons_Commandes");
             });
 
-            modelBuilder.Entity<Pay>(entity =>
+            modelBuilder.Entity<Pays>(entity =>
             {
                 entity.HasKey(e => e.IdPays)
                     .HasName("PRIMARY");
@@ -455,14 +454,14 @@ namespace VillageGreen.Data
                     .HasColumnType("int(11)")
                     .HasColumnName("stock");
 
-                entity.HasOne(d => d.IdRubriqueNavigation)
+                entity.HasOne(d => d.Rubrique)
                     .WithMany(p => p.Produits)
                     .HasForeignKey(d => d.IdRubrique)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Produits_Rubriques");
             });
 
-            modelBuilder.Entity<Progressionscommande>(entity =>
+            modelBuilder.Entity<ProgressionCommande>(entity =>
             {
                 entity.HasKey(e => e.IdProgressionsCommande)
                     .HasName("PRIMARY");
@@ -483,13 +482,13 @@ namespace VillageGreen.Data
 
                 entity.Property(e => e.IdEtatCommande).HasColumnType("int(11)");
 
-                entity.HasOne(d => d.IdCommandeNavigation)
-                    .WithMany(p => p.Progressionscommandes)
+                entity.HasOne(d => d.Commande)
+                    .WithMany(p => p.ProgressionsCommande)
                     .HasForeignKey(d => d.IdCommande)
                     .HasConstraintName("FK_ProgressionsCommande_commandes");
 
-                entity.HasOne(d => d.IdEtatCommandeNavigation)
-                    .WithMany(p => p.Progressionscommandes)
+                entity.HasOne(d => d.EtatCommande)
+                    .WithMany(p => p.ProgressionsCommande)
                     .HasForeignKey(d => d.IdEtatCommande)
                     .HasConstraintName("FK_ProgressionsCommande_EtatsCommande");
             });
@@ -541,14 +540,13 @@ namespace VillageGreen.Data
                     .HasMaxLength(150)
                     .HasColumnName("libelleRubrique");
 
-                entity.HasOne(d => d.IdRubriqueMereNavigation)
-                    .WithMany(p => p.InverseIdRubriqueMereNavigation)
+                entity.HasOne(d => d.RubriqueMere)
+                    .WithMany(p => p.RubriquesMere)
                     .HasForeignKey(d => d.IdRubriqueMere)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Rubriques_RubriqueMere");
             });
 
-            modelBuilder.Entity<Tva>(entity =>
+            modelBuilder.Entity<TVA>(entity =>
             {
                 entity.HasKey(e => e.IdTva)
                     .HasName("PRIMARY");
@@ -574,7 +572,7 @@ namespace VillageGreen.Data
                 entity.HasIndex(e => e.EmailUser, "EmailUser")
                     .IsUnique();
 
-                entity.HasIndex(e => e.IdRole, "FK_User_Roles");
+                entity.HasIndex(e => e.IdRole, "FK_Users_Roles");
 
                 entity.Property(e => e.IdUser).HasColumnType("int(11)");
 
@@ -599,11 +597,11 @@ namespace VillageGreen.Data
                     .HasMaxLength(150)
                     .HasColumnName("prenomUser");
 
-                entity.HasOne(d => d.IdRoleNavigation)
+                entity.HasOne(d => d.Role)
                     .WithMany(p => p.Users)
                     .HasForeignKey(d => d.IdRole)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_User_Roles");
+                    .HasConstraintName("FK_Users_Roles");
             });
 
             modelBuilder.Entity<Ville>(entity =>
@@ -629,7 +627,7 @@ namespace VillageGreen.Data
                     .HasMaxLength(150)
                     .HasColumnName("libelleVIlle");
 
-                entity.HasOne(d => d.IdPaysNavigation)
+                entity.HasOne(d => d.Pays)
                     .WithMany(p => p.Villes)
                     .HasForeignKey(d => d.IdPays)
                     .OnDelete(DeleteBehavior.ClientSetNull)

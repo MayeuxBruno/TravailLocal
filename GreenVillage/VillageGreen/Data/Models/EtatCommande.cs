@@ -5,16 +5,16 @@ using System.Collections.Generic;
 
 namespace VillageGreen.Data.Models
 {
-    public partial class Etatscommande
+    public partial class EtatCommande
     {
-        public Etatscommande()
+        public EtatCommande()
         {
-            Progressionscommandes = new HashSet<Progressionscommande>();
+            ProgressionsCommande = new HashSet<ProgressionCommande>();
         }
 
         public int IdEtatCommande { get; set; }
         public string LibelleEtatCommande { get; set; }
 
-        public virtual ICollection<Progressionscommande> Progressionscommandes { get; set; }
+        public virtual ICollection<ProgressionCommande> ProgressionsCommande { get; set; }
     }
 }

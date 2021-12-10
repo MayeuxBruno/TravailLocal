@@ -14,6 +14,6 @@ namespace VillageGreen.Data.Models
         public string MdpUser { get; set; }
         public int IdRole { get; set; }
 
-        public virtual Role IdRoleNavigation { get; set; }
+        public virtual Role Role { get; set; }
     }
 }

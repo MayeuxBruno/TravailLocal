@@ -5,14 +5,14 @@ using System.Collections.Generic;
 
 namespace VillageGreen.Data.Models
 {
-    public partial class Progressionscommande
+    public partial class ProgressionCommande
     {
         public int IdProgressionsCommande { get; set; }
         public int? IdCommande { get; set; }
         public int? IdEtatCommande { get; set; }
         public DateTime DateEtatCommande { get; set; }
 
-        public virtual Commande IdCommandeNavigation { get; set; }
-        public virtual Etatscommande IdEtatCommandeNavigation { get; set; }
+        public virtual Commande Commande { get; set; }
+        public virtual EtatCommande EtatCommande { get; set; }
     }
 }

@@ -10,9 +10,9 @@ namespace VillageGreen.Data.Models
         public Commande()
         {
             Factures = new HashSet<Facture>();
-            Lignescommandes = new HashSet<Lignescommande>();
+            LignesCommande = new HashSet<LigneCommande>();
             Livraisons = new HashSet<Livraison>();
-            Progressionscommandes = new HashSet<Progressionscommande>();
+            ProgressionsCommande = new HashSet<ProgressionCommande>();
         }
 
         public int IdCommande { get; set; }
@@ -21,11 +21,11 @@ namespace VillageGreen.Data.Models
         public int IdUser { get; set; }
         public int IdAdresse { get; set; }
 
-        public virtual Adress IdAdresseNavigation { get; set; }
-        public virtual Client IdUserNavigation { get; set; }
+        public virtual Adresse Adresse { get; set; }
+        public virtual Client Client { get; set; }
         public virtual ICollection<Facture> Factures { get; set; }
-        public virtual ICollection<Lignescommande> Lignescommandes { get; set; }
+        public virtual ICollection<LigneCommande> LignesCommande { get; set; }
         public virtual ICollection<Livraison> Livraisons { get; set; }
-        public virtual ICollection<Progressionscommande> Progressionscommandes { get; set; }
+        public virtual ICollection<ProgressionCommande> ProgressionsCommande { get; set; }
     }
 }

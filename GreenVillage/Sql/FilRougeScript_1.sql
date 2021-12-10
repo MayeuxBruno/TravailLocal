@@ -107,7 +107,7 @@ CREATE TABLE Clients(
 --
 -- Table structure for table `Utilisateurs`
 --
-CREATE TABLE User(
+CREATE TABLE Users(
    IdUser INT AUTO_INCREMENT PRIMARY KEY,
    nomUser VARCHAR(150)  NOT NULL,
    prenomUser VARCHAR(150)  NOT NULL,
@@ -134,7 +134,7 @@ CREATE TABLE Adresses(
    emailAdresse VARCHAR(150)  NOT NULL,
    telMobile VARCHAR(12)  NOT NULL,
    telFixe VARCHAR(12) ,
-   adresse VARCHAR(50)  NOT NULL,
+   adressePostale VARCHAR(50)  NOT NULL,
    province VARCHAR(50) ,
    complementAdresse VARCHAR(50) ,
    IdVille INT NOT NULL
@@ -231,8 +231,8 @@ ALTER TABLE Produits
 ALTER TABLE Clients
  ADD CONSTRAINT FK_Clients_CategoriesClient  FOREIGN KEY(IdCategorieClient) REFERENCES CategoriesClient(IdCategorieClient);
 
-ALTER TABLE User
- ADD CONSTRAINT FK_User_Roles FOREIGN KEY(IdRole) REFERENCES Roles(IdRole);
+ALTER TABLE Users
+ ADD CONSTRAINT FK_Users_Roles FOREIGN KEY(IdRole) REFERENCES Roles(IdRole);
 
 ALTER TABLE ProgressionsCommande
  ADD CONSTRAINT FK_ProgressionsCommande_commandes FOREIGN KEY(IdCommande) REFERENCES Commandes(IdCommande),

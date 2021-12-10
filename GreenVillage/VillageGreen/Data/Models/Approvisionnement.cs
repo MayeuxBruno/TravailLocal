@@ -12,7 +12,7 @@ namespace VillageGreen.Data.Models
         public int? IdFournisseur { get; set; }
         public string RefFournisseur { get; set; }
 
-        public virtual Fournisseur IdFournisseurNavigation { get; set; }
-        public virtual Produit IdProduitNavigation { get; set; }
+        public virtual Fournisseur Fournisseur { get; set; }
+        public virtual Produit Produit { get; set; }
     }
 }

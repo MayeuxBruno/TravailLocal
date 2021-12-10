@@ -9,7 +9,7 @@ namespace VillageGreen.Data.Models
     {
         public Ville()
         {
-            Adresses = new HashSet<Adress>();
+            Adresses = new HashSet<Adresse>();
         }
 
         public int IdVille { get; set; }
@@ -17,7 +17,7 @@ namespace VillageGreen.Data.Models
         public string CodePostal { get; set; }
         public int IdPays { get; set; }
 
-        public virtual Pay IdPaysNavigation { get; set; }
-        public virtual ICollection<Adress> Adresses { get; set; }
+        public virtual Pays Pays { get; set; }
+        public virtual ICollection<Adresse> Adresses { get; set; }
     }
 }

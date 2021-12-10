@@ -17,7 +17,7 @@ namespace VillageGreen.Data.Models
         public int CoefClient { get; set; }
         public int IdCategorieClient { get; set; }
 
-        public virtual Categoriesclient IdCategorieClientNavigation { get; set; }
+        public virtual CategorieClient CategorieClient { get; set; }
         public virtual ICollection<Commande> Commandes { get; set; }
     }
 }

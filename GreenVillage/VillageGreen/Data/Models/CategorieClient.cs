@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 namespace VillageGreen.Data.Models
 {
-    public partial class Categoriesclient
+    public partial class CategorieClient
     {
-        public Categoriesclient()
+        public CategorieClient()
         {
             Clients = new HashSet<Client>();
         }
