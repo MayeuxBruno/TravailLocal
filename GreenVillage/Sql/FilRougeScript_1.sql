@@ -49,7 +49,7 @@ CREATE TABLE Reglements(
 --
 CREATE TABLE TVA(
    IdTVA INT AUTO_INCREMENT PRIMARY KEY,
-   tauxTVA INT
+   tauxTVA INT NOT NULL
 )ENGINE=InnoDB;
 
 
@@ -147,7 +147,7 @@ CREATE TABLE Adresses(
 CREATE TABLE Commandes(
    IdCommande INT AUTO_INCREMENT PRIMARY KEY,
    NumeroCommande VARCHAR(10) UNIQUE,
-   dateCommande DATE,
+   dateCommande DATETIME,
    IdUser INT NOT NULL,
    IdAdresse INT NOT NULL
 )ENGINE=InnoDB;
@@ -157,7 +157,7 @@ CREATE TABLE Commandes(
 -- Table structure for table `LignesCommande`
 --
 CREATE TABLE LignesCommande(
-    IdLigneCommande INT AUTO_INCREMENT PRIMARY KEY,
+   IdLigneCommande INT AUTO_INCREMENT PRIMARY KEY,
    IdProduit INT,
    IdCommande INT,
    quantiteProduit INT
@@ -168,7 +168,7 @@ CREATE TABLE LignesCommande(
 -- Table structure for table `Livraisons`
 --
 CREATE TABLE Livraisons(
-    IdLivraison INT AUTO_INCREMENT PRIMARY KEY,
+   IdLivraison INT AUTO_INCREMENT PRIMARY KEY,
    IdCommande INT,
    IdAdresse INT,
    dateLivraison DATE,
@@ -179,7 +179,7 @@ CREATE TABLE Livraisons(
 -- Table structure for table `Approvisionnements`
 --
 CREATE TABLE Approvisionnements(
-    IdApprovisionnement INT AUTO_INCREMENT PRIMARY KEY,
+   IdApprovisionnement INT AUTO_INCREMENT PRIMARY KEY,
    IdProduit INT,
    IdFournisseur INT,
    refFournisseur VARCHAR(5)  NOT NULL
@@ -189,7 +189,7 @@ CREATE TABLE Approvisionnements(
 -- Table structure for table `Factures`
 --
 CREATE TABLE Factures(
-    IdFacture INT AUTO_INCREMENT PRIMARY KEY,
+   IdFacture INT AUTO_INCREMENT PRIMARY KEY,
    IdReglement INT,
    IdCommande INT,
    datePaiement DATE NOT NULL,
@@ -200,7 +200,7 @@ CREATE TABLE Factures(
 -- Table structure for table `HistoriqueTVA`
 --
 CREATE TABLE HistoriqueTVA(
-    IdHistoriqueTVA INT AUTO_INCREMENT PRIMARY KEY,
+   IdHistoriqueTVA INT AUTO_INCREMENT PRIMARY KEY,
    IdProduit INT,
    IdTVA INT,
    dateTVA DATE NOT NULL
@@ -210,14 +210,14 @@ CREATE TABLE HistoriqueTVA(
 -- Table structure for table `ProgressionsCommande`
 --
 CREATE TABLE ProgressionsCommande(
-    IdProgressionsCommande INT AUTO_INCREMENT PRIMARY KEY,
+   IdProgressionsCommande INT AUTO_INCREMENT PRIMARY KEY,
    IdCommande INT,
    IdEtatCommande INT,
-   dateEtatCommande DATE NOT NULL
+   dateEtatCommande DATETIME NOT NULL
 )ENGINE=InnoDB;
 
 
-/* les Contraintes de clef etrangere <3 pour vous les Disciples de Martine */
+-- les Contraintes de clef etrangere 
 
 ALTER TABLE Villes 
 ADD CONSTRAINT FK_Villes_Pays FOREIGN KEY(IdPays) REFERENCES Pays(IdPays);
