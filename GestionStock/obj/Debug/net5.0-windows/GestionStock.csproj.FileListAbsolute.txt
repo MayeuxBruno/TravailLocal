@@ -275,7 +275,6 @@ D:\Exercices\TravailLocal\GestionStock\bin\Debug\net5.0-windows\ZstdNet.dll
 D:\Exercices\TravailLocal\GestionStock\bin\Debug\net5.0-windows\MySql.EntityFrameworkCore.dll
 D:\Exercices\TravailLocal\GestionStock\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
 D:\Exercices\TravailLocal\GestionStock\bin\Debug\net5.0-windows\System.Diagnostics.DiagnosticSource.dll
-D:\Exercices\TravailLocal\GestionStock\obj\Debug\net5.0-windows\GestionStock.csproj.AssemblyReference.cache
 D:\Exercices\TravailLocal\GestionStock\obj\Debug\net5.0-windows\MainWindow.g.cs
 D:\Exercices\TravailLocal\GestionStock\obj\Debug\net5.0-windows\Windows\FormAjoutProduit.g.cs
 D:\Exercices\TravailLocal\GestionStock\obj\Debug\net5.0-windows\Windows\GestionArticles.g.cs
@@ -294,3 +293,4 @@ D:\Exercices\TravailLocal\GestionStock\obj\Debug\net5.0-windows\GestionStock.dll
 D:\Exercices\TravailLocal\GestionStock\obj\Debug\net5.0-windows\ref\GestionStock.dll
 D:\Exercices\TravailLocal\GestionStock\obj\Debug\net5.0-windows\GestionStock.pdb
 D:\Exercices\TravailLocal\GestionStock\obj\Debug\net5.0-windows\GestionStock.genruntimeconfig.cache
+D:\Exercices\TravailLocal\GestionStock\obj\Debug\net5.0-windows\GestionStock.csproj.CopyComplete
