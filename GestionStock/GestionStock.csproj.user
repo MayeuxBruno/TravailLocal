@@ -9,6 +9,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Installer1.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Update="Windows\FormAjoutProduit.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -93,7 +93,7 @@ namespace GestionStock.Windows {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/GestionStock;component/windows/gestionarticles.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/GestionStock;V1.0.0.0;component/windows/gestionarticles.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Windows\GestionArticles.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
