@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Installer", "Installer.cspr
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "..\Setup1\Setup1.vdproj", "{40D39B4A-DC9C-40B6-9C56-8404555641D4}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup2", "..\Setup2\Setup2.vdproj", "{A37FE098-0633-4D7A-955F-B98F3AC217A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,8 @@ Global
 		{C4E900D6-89FF-4889-B6B6-5B8F920E9A37}.Release|Any CPU.Build.0 = Release|Any CPU
 		{40D39B4A-DC9C-40B6-9C56-8404555641D4}.Debug|Any CPU.ActiveCfg = Debug
 		{40D39B4A-DC9C-40B6-9C56-8404555641D4}.Release|Any CPU.ActiveCfg = Release
+		{A37FE098-0633-4D7A-955F-B98F3AC217A8}.Debug|Any CPU.ActiveCfg = Debug
+		{A37FE098-0633-4D7A-955F-B98F3AC217A8}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
