@@ -216,7 +216,26 @@ CREATE TABLE ProgressionsCommande(
    dateEtatCommande DATETIME NOT NULL
 )ENGINE=InnoDB;
 
+CREATE VIEW Produits_Fournisseurs
+AS
+SELECT p.libelleProduit,
+       p.description,
+       p.refProduit,
+       p.prixHorsTaxe,
+       p.photo,
+       p.stock,
+       a.refFournisseur,
+       f.nomFournisseur
+FROM Produits as p 
+LEFT JOIN Approvisionnements as a ON a.IdProduit=p.IdProduit
+LEFT JOIN Fournisseurs as f ON a.IdFournisseur=f.IdFournisseur; 
 
+CREATE VIEW Rubrique_SousRubrique
+AS 
+SELECT r.libelleRubrique,
+       rf.libelleRubrique as "rubrique mere"
+FROM rubriques as r
+LEFT JOIN rubriques as rf ON r.IdRubrique = rf.IdRubriqueMere; 
 -- les Contraintes de clef etrangere 
 
 ALTER TABLE Villes 
